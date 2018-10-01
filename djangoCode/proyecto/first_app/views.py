@@ -10,9 +10,18 @@ def index(request):
     date_dict = {'access_records':webpages_list}
     # Aqui se hace un diccionario donde puedes insertar con keys
     # y luego el valor que quieres instertar
-    dictionary = {'insert_me':'Hola soy de first app'}
-    return render(request,'first_app/clon.html',context=date_dict)
+    #dictionary = {'insert_me':'Hola soy de first app'}
+    #return render(request,'first_app/clon.html',context=date_dict)
     return render(request,'first_app/clon.html')
+
+def inicio(request):
+    return render(request,'first_app/Inicio.html')
+
+def crearcuenta(request):
+    return render(request,'first_app/crearcuenta.html')
+
+def relative(request):
+    return render(request,'first_app/relative_url_templates.html')
 
 def usuarios(request):
 

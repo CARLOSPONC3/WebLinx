@@ -26,7 +26,7 @@ SECRET_KEY = '2+^5g!ou_py15_rnbhgc&ikj_!w8a2!^3fv-x3dqc=yn=x%74b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['charlielinx.pythonanywhere.com']
+ALLOWED_HOSTS = ['charlielinx.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
