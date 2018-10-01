@@ -1,0 +1,163 @@
+<!doctype html>
+{%load staticfiles%}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+
+    <title>UVM | Universidad del Valle de México - UVM</title>
+  </head>
+  <body>
+    <!-- {{ insert_me }} -->
+    <!-- <div class="">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+        <p>No ACCESS RECORDS FOUND</p>
+      {% endif %}
+    </div> -->
+    <div class= "container">
+      <!-- Inicio de NavBar  -->
+    <nav class="navbar navbar-dark bg-dark border border-danger navbar-expand-lg  navbar-fixed-top ">
+      <div class="container">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Aspirantes </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Estudiantes</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Padres</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link disabled" href="#">Profesores</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link disabled" href="#">Organizaciones</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link disabled" href="#">Campaña 2018</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+</nav>
+<!-- Fin de Navbar -->
+<!-- Inicio de Carrusel -->
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel ">
+        <div class="carousel-inner ">
+          <div class="container-fluid ">
+          <div class="carousel-caption d-none d-md-block ">
+            <ul class="nav justify-content-center ">
+              <div class="card bg-transparent border-light mb-3 ">
+                <div class="card-body">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#" >ACERCA DE UVM</a>
+                  </li>
+                </div>
+              </div>
+              <div class="card bg-transparent border-light mb-3">
+                <div class="card-body">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">PROGRAMAS ACADÉMICOS</a>
+                  </li>
+                </div>
+              </div>
+               <div class="card bg-transparent border-light mb-3">
+                <div class="card-body">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">FINANCIAMIENTO Y BECAS</a>
+                  </li>
+                </div>
+              </div>
+              <div class="card bg-transparent border-light mb-3">
+                <div class="card-body">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">ADMISIONES</a>
+                  </li>
+                </div>
+              </div>
+              <div class="card bg-transparent border-light mb-3">
+                <div class="card-body">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="project.html">GRADUACIONES</a>
+                  </li>
+                </div>
+              </div>
+        </ul>
+          </div>
+          </div>
+
+          <div class="carousel-item active">
+
+
+            <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome_Compartamos-1170X620.jpg/2ba177d0-088c-45b2-9f9c-7f4ded2aecb5?t=1533539320000" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome-Fins-04092018.jpg/54f1a5e0-30b7-428e-bc50-03b89c36acda?t=1536115929000" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome-Fins-04092018.jpg/54f1a5e0-30b7-428e-bc50-03b89c36acda?t=1536115929000" alt="Third slide">
+          </div>
+        </div>
+      </div>
+      <!-- Fin de carrusel -->
+      <!-- Body para botones -->
+      <div class="card">
+        <div class="card text-center">
+          <div class="card-body">
+            <div class="container-fluids">
+              <button type="button" class="btn btn-secondary"><img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/164688/solicita-info.png/b07bf610-e751-4b2c-8a89-54f237249328?t=5213326362587" alt=""></button>
+              <button type="button" class="btn btn-danger"><img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/164688/botones_01800.png/8f47200e-06ba-453b-8836-fa3d1cb31317?t=1527027635674" alt=""></button>
+              <button type="button" class="btn btn-danger"><img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/164688/boton_chat.jpg/5d82f75c-7b1a-4cca-9e67-8dce15c4c049?t=1534528393000" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fin Body para botones -->
+      <div class="container-fluids">
+        <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/386995/CompB_WALDEN_nov18_1.jpg/8fce2770-7af8-4a25-946d-244f897c5764?t=1534776063000" alt="">
+      </div>
+      <!-- Inicio publicidad -->
+      <div class="container">
+        <!--Div class container hace que se acomode lo de adentro  -->
+
+</div>
+
+
+
+    <!--Fin de container  -->
+    </div>
+
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
