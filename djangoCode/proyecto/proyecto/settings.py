@@ -26,7 +26,7 @@ SECRET_KEY = '2+^5g!ou_py15_rnbhgc&ikj_!w8a2!^3fv-x3dqc=yn=x%74b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://git.heroku.com/graduacionesuvm.git"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -124,5 +124,5 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
+# # Activate Django-Heroku.
+# django_heroku.settings(locals())
