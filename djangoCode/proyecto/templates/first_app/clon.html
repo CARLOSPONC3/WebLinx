@@ -9,29 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
-
     <title>UVM | Universidad del Valle de México - UVM</title>
   </head>
   <body>
-    <!-- {{ insert_me }} -->
-    <!-- <div class="">
-      {% if access_records %}
-      <table>
-        <thead>
-          <th>Site Name</th>
-          <th>Date Accessed</th>
-        </thead>
-        {% for acc in access_records %}
-        <tr>
-          <td>{{ acc.name }}</td>
-          <td>{{ acc.date }}</td>
-        </tr>
-        {% endfor %}
-      </table>
-      {% else %}
-        <p>No ACCESS RECORDS FOUND</p>
-      {% endif %}
-    </div> -->
     <div class= "container">
       <!-- Inicio de NavBar  -->
     <nav class="navbar navbar-dark bg-dark border border-danger navbar-expand-lg  navbar-fixed-top ">
@@ -67,43 +47,44 @@
 </nav>
 <!-- Fin de Navbar -->
 <!-- Inicio de Carrusel -->
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel ">
-        <div class="carousel-inner ">
-          <div class="container-fluid ">
-          <div class="carousel-caption d-none d-md-block ">
-            <ul class="nav justify-content-center ">
-              <div class="card bg-transparent border-light mb-3 ">
-                <div class="card-body">
+
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="container-fluid">
+          <div class="carousel-caption d-none d-sm-block ">
+            <ul class="nav navbar-expand-lg text-md-justify ">
+              <div class="card bg-transparent border-right mb-2">
+                <div class="card-link">
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="#" >ACERCA DE UVM</a>
+                    <a class="nav-link text-white" href="#">ACERCA DE UVM</a>
                   </li>
                 </div>
               </div>
-              <div class="card bg-transparent border-light mb-3">
-                <div class="card-body">
+              <div class="card bg-transparent border-right mb-2">
+                <div class="card-link">
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="#">PROGRAMAS ACADÉMICOS</a>
+                    <a class="nav-link text-white" href="#">PROGRAMAS ACADÉMICOS</a>
                   </li>
                 </div>
               </div>
-               <div class="card bg-transparent border-light mb-3">
-                <div class="card-body">
+               <div class="card bg-transparent border-right mb-2">
+                <div class="card-link">
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="#">FINANCIAMIENTO Y BECAS</a>
+                    <a class="nav-link text-white" href="#">FINANCIAMIENTO Y BECAS</a>
                   </li>
                 </div>
               </div>
-              <div class="card bg-transparent border-light mb-3">
-                <div class="card-body">
+              <div class="card bg-transparent border-right mb-2">
+                <div class="card-link">
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="#">ADMISIONES</a>
+                    <a class="nav-link text-nowrap" href="#" >ADMISIONES</a>
                   </li>
                 </div>
               </div>
-              <div class="card bg-transparent border-light mb-3">
-                <div class="card-body">
+              <div class="card bg-transparent border-right mb-2">
+                <div class="card-link">
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'first_app:inicio' %}">GRADUACIONES</a>
+                    <a class="nav-link text-nowrap text-white" href="{% url 'first_app:inicio' %}">GRADUACIONES</a>
                   </li>
                 </div>
               </div>
@@ -111,18 +92,28 @@
           </div>
           </div>
 
-          <div class="carousel-item active">
 
+          <div class="carousel-item active">
 
             <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome_Compartamos-1170X620.jpg/2ba177d0-088c-45b2-9f9c-7f4ded2aecb5?t=1533539320000" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome-Fins-04092018.jpg/54f1a5e0-30b7-428e-bc50-03b89c36acda?t=1536115929000" alt="Second slide">
+            <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome_VIVE_UVM_OCT18_2.jpg/1c625f35-a93b-4e40-b652-a4a48a0d8d22?t=1538585558000" alt="Second slide">
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/360404/BannerHome-Fins-04092018.jpg/54f1a5e0-30b7-428e-bc50-03b89c36acda?t=1536115929000" alt="Third slide">
           </div>
         </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
       </div>
       <!-- Fin de carrusel -->
       <!-- Body para botones -->
@@ -141,23 +132,204 @@
       <div class="container-fluids">
         <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/386995/CompB_WALDEN_nov18_1.jpg/8fce2770-7af8-4a25-946d-244f897c5764?t=1534776063000" alt="">
       </div>
-      <!-- Inicio publicidad -->
-      <div class="container">
-        <!--Div class container hace que se acomode lo de adentro  -->
 
+
+      <!-- Inicio publicidad -->
+      <div class="container-fluids">
+        <div class="row ">
+          <div class="col-lg-4">
+    <div class="int">
+      <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/488668/LinkHome-Fimpes.png/993b9dd2-9bc4-4f55-bc8a-e8c835cf2d49?t=1533538840000">
+      <div class="info">
+        <a href="https://www.universidaduvm.mx/acreditaciones-y-certificaciones">
+          <p class="font-weight-light-bold btn btn-secondary btn-block"> Reconocimientos </p> </a>
+           </div>
+         </div>
+    </div>
+    <!--Para calculadora-->
+    <div class="col-lg-4">
+    <div class="int ">
+      <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/488668/LinkHome-Calculadora.jpg/09100ed2-5492-4831-9549-1552b90267b0?t=1533538839000">
+      <div class="info">
+          <a href="https://www.universidaduvm.mx/calcula-tu-colegiatura"/>
+          <p class="font-weight-light-bold btn btn-secondary btn-block"> Calculadora </p>
+          </a>
+      </div>
+      </div>
+    </div>
+
+    <!--Para UVM RADIO  -->
+    <div class="col-lg-4">
+    <div class="int ">
+      <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/488668/LinkHome-UVMRadio.jpg/9d0ef3f5-c476-4b1f-bd53-0db0ebb645a8?t=1535995846717"/>
+      <div class = "info">
+        <a href="http://www.uvmradio.mx/">
+          <p class="font-weight-light-bold btn btn-secondary btn-block"> UVM Radio </p>
+        </a>
+    </div>
+  </div>
+</div>
+<!--Para Hospital Veterinario  -->
+    <div class="col-lg-4">
+    <div class="int ">
+      <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/488668/LinkHome-HospitalVeterinario.jpg/46625c56-b6e1-4703-bf0f-c6d9890f4a28?t=1533538838000">
+      <div class = "info">
+        <a href="https://www.universidaduvm.mx/hospital-veterinario">
+          <p class="font-weight-light-bold btn btn-secondary btn-block"> Hospital Veterinario </p>
+        </a>
+
+    </div>
+  </div>
+</div>
+
+<!--Para Inspeccionar Elemento  -->
+    <div class="col-lg-4">
+    <div class="int ">
+      <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/488668/LinkHome-Investigacion.jpg/f5f0cc8f-24f7-424b-8484-f2d450d0113d?t=1533538838000">
+      <div class = "info " >
+        <a href="https://www.universidaduvm.mx/investigaciones-uvm">
+          <p class="font-weight-light-bold btn btn-secondary btn-block"> Investigación UVM </p> </a>
+    </div>
+  </div>
+</div>
+
+<!--Para Conoce cómo  -->
+    <div class="col-lg-4">
+    <div class="int ">
+      <img class="d-block w-100" src="https://www.universidaduvm.mx/documents/20700/488668/LinkHome-Conocemas.jpg/add33bef-0a48-4be1-8d7f-f222e2a17990?t=1533538839000">
+      <div class = "info">
+        <a href="https://www.compartamos.com.mx/wps/portal/compartamos/submenu/servicio-a-la-comunidad/BecasUVM">
+          <p class="font-weight-light-bold btn btn-secondary btn-block"> Conoce cómo </p> </a>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
 
+ <!--Fin de container  -->
 
-    <!--Fin de container  -->
+
+<!-- Footer -->
+<div class="container p-3 mb-7 bg-dark text-white">
+    <div class="container active text-justify text-md-justify">
+      <div class="row">
+        <div class="col-md-3 mt-md-0 mt-3">
+          <img src="https://www.universidaduvm.mx/uvm-test-theme/images/custom/assets/img/white-uvm.png">
+
+        </div>
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-md-0 mb-2">
+
+            <!-- Contáctanos -->
+            <h5 class="text-capitalized"><b>Contáctanos</b></h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white bg-dark">01 800 0000 886</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Chats</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Buzón del rector</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Prensa UVM</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-capitalized"><b>Links de Ayuda </b></h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white bg-dark">Admisiones</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Bolsa de trabajo Estudiantes </a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Centros de información UVM</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Trabaja con nosotros</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Caja y Facturación</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Mapa de Sitio</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Atención UVM</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Comunidad UVM</a>
+              </li>
+            </ul>
+          </div>
+          <!-- -->
+
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-capitalized"> <b>Social Media</b></h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white bg-dark">Facebook</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Twitter </a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Linked in</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Youtube</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white bg-dark">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
     </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-left py-3">D.R.© Universidad del Valle de México, México. 2018 Laureate International Universities
+      <a href="/web/uvm/aviso-de-privacidad"> Aviso de Privacidad</a>
+      |
+      <a href="#"> Mapa de sitio </a>
+    </div>
+    <!-- Copyright -->
 
   </div>
+  <!-- Footer -->
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
   </body>
 </html>
