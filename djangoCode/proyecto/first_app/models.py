@@ -6,10 +6,11 @@ class UserProfileInfo(models.Model):
 
     user = models.OneToOneField(User)
 
-    #additional classes
-    portfolio_site = models.URLField(blank=True)
 
-    profile_pic = models.ImageField(upload_to='profile_pics',blank=True)
+    #additional classes
+    portfolio_site = models.URLField(blank=True,verbose_name="tu sitio con http://")
+
+    profile_pic = models.ImageField(upload_to='profile_pics',blank=True,verbose_name="Imagen del perfil: ")
 
     def __str__(self):
         return self.user.username
