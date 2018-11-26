@@ -24,5 +24,8 @@ urlpatterns = [
 
     url(r'^$',views.index,name='index'),
     url(r'^first_app/',include('first_app.urls')),
-    url(r'^admin/', admin.site.urls)
+    url(r'^admin/', admin.site.urls),
+    url(r'^logout/$', views.user_logout,name='logout'),
+    url(r'^special/', views.special,name='special')
+    
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

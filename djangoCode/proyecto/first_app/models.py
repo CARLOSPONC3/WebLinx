@@ -24,39 +24,38 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nombre
 
+class Reserva(models.Model):
+    mesa = models.CharField(max_length=2,primary_key=True)
+    def __str__(self):
+        return self.mesa
+
 class Asientos(models.Model):
-    asiento = models.CharField(max_length=2)
+    asiento = models.CharField(max_length=2,primary_key=True)
     status = models.BooleanField()
+    mesa = models.ForeignKey(Reserva)
 
     def __str__(self):
         return self.asiento
 
-class Reserva(models.Model):
-    # class Meta:
-    #     unique_together = (('mesa','asiento'),)
-    mesa = models.CharField(max_length=2,primary_key=True)
-    asiento = models.ForeignKey(Asientos)
-    def __str__(self):
-        return self.mesa
-
 class Reservaciones(models.Model):
-    usuario = models.ForeignKey(Usuario)
-    reserva = models.ForeignKey(Reserva)
+    user = models.ForeignKey(User)
+    asientos = models.ForeignKey(Asientos)
     def __str__(self):
-        return self.Id_Reservaciones
-
-class Detalle(models.Model):
-    usuario = models.ForeignKey(Usuario)
-    reservaciones = models.ForeignKey(Reservaciones)
-    fecha = models.DateField(auto_now=True)
-    cantidad = models.IntegerField()
-    apartado = models.DecimalField(max_digits=10, decimal_places=2)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2)
-    IVA = models.DecimalField(max_digits=10, decimal_places=2)
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-    def __str__(self):
-        return self.Id_Venta
+        template = 'Reserva del usuario {0.user} asientos: {0.asientos}'
+        return template.format(self)
 #
+# class Detalle(models.Model):
+#     usuario = models.ForeignKey(Usuario)
+#     reservaciones = models.ForeignKey(Reservaciones)
+#     fecha = models.DateField(auto_now=True)
+#     cantidad = models.IntegerField()
+#     apartado = models.DecimalField(max_digits=10, decimal_places=2)
+#     subtotal = models.DecimalField(max_digits=10, decimal_places=2)
+#     IVA = models.DecimalField(max_digits=10, decimal_places=2)
+#     total = models.DecimalField(max_digits=10, decimal_places=2)
+#     def __str__(self):
+#         return self.Id_Venta
+# #
 # class Topic(models.Model):
 #     top_name = models.CharField(max_length=264,unique=True)
 #

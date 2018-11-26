@@ -143,5 +143,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = '/first_app/login'
+
 # # Activate Django-Heroku.
 # django_heroku.settings(locals())

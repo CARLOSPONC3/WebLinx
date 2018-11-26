@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from first_app.models import Usuario,Reserva,Reservaciones,Detalle,Asientos,UserProfileInfo
-from first_app.forms import UserForm,UserProfileInfoForm
+from django.http import HttpResponseRedirect,HttpResponse
+from first_app.models import Usuario,Reserva,Reservaciones,Asientos,UserProfileInfo
+from first_app.forms import UserForm,UserProfileInfoForm,StatusForm
+from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate,login,logout
 # from first_app.forms import NewUser
 # Create your views here.
 
@@ -14,21 +17,37 @@ def index(request):
     #return render(request,'first_app/clon.html',context=date_dict)
     return render(request,'first_app/clon.html')
 
+@login_required
+def user_logout(request):
+    logout(request)
+    return render(request,"first_app/Inicio.html")
+    # return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def special(request):
+    return HttpResponse("Has iniciado sesión correctamente!")
+
+def selmesa(request):
+    smesa = request.POST.get('mesa')
+    asientos = Asientos.objects.filter(mesa=bar)
+    return smesa
+
+
+
 def reservacion(request):
+    #bar=selmesa(request)
+    asientos = Asientos.objects.all()#mesa=bar)
+    asien = [request.POST.get('este')]
+    for i in asien:
+        if request.method == "POST":
+            estatus = Asientos.objects.get(asiento=i)
+            if estatus.status == True:
+                estatus.status = False
+            else:
+                estatus.status = True
+            estatus.save()
 
-    status = False
-
-    if status == False:
-        status_form = StatusForm(data=request.POST)
-
-        if status_form.is_valid():
-            status = status_form.save()
-            status = True
-        else:
-            print(StatusForm.errors)
-
-    else:
-        status_form = StatusForm()
+    return render(request,"first_app/reservacion.html", {'asientos': asientos})
 
 
 def crearcuenta(request):
@@ -90,6 +109,32 @@ def usuarios(request):
             print("Error form invalid")
 
     return render(request,"first_app/crearcuenta.html",{'form':form})
+
+
+def user_login(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username,password=password)
+
+        if user:
+            if user.is_active:
+                login(request,user)
+                return render(request,"first_app/Inicio.html")
+                # return HttpResponseRedirect(reverse('index'))
+
+            else:
+                return HttpResponse("CUENTA NO ACTIVADA")
+        else:
+            print("Alguien intento ingresar pero no pudo")
+            print("Username: {} and password {}".format(username,password))
+            return HttpResponse("Datos no validos!")
+    else:
+        return render(request,'first_app/user_login.html',{})
+
+
 #
 # def form_name_view(request):
 #     form = forms.FormName()

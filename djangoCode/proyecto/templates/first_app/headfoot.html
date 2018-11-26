@@ -46,6 +46,34 @@
 
 </nav>
 <!-- Fin de Navbar -->
+<nav class="navbar navbar-light  navbar-expand-lg nav justify-content-end " style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'first_app:crearcuenta' %}">Registro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'admin:index' %}">Administrador</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'first_app:inicio' %}">Inicio</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'first_app:user_login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+      </div>
+  </nav>
     <div class="container">
       {% block body_block %}
       {% endblock %}

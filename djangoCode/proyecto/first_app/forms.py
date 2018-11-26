@@ -1,6 +1,6 @@
 from django import forms
 from django.core import validators
-from first_app.models import Usuario,UserProfileInfo,Asientos
+from first_app.models import Usuario,UserProfileInfo,Asientos,Reserva
 from django.contrib.auth.models import User
 
 
@@ -11,6 +11,14 @@ class StatusForm(forms.ModelForm):
     class Meta():
         model = Asientos
         fields = ('asiento','status')
+
+class ReservaForm(forms.Form):
+    asiento = forms.ImageField()
+    mesa = forms.ImageField()
+
+    class Meta():
+        model = Asientos
+        fields = ('status')
 
 
 class UserForm(forms.ModelForm):
@@ -32,23 +40,23 @@ class NewUser(forms.ModelForm):
     class Meta():
         model = Usuario
         fields = '__all__'
-
-class FormName(forms.Form):
-    name = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    verifique_email = forms.EmailField(label='Ingrese su email nuevamente', required=True)
-
-    #text = forms.CharField(widget = forms.Textarea)
-    # botcacther = forms.CharField(required=False,
-    #                             widget=forms.HiddenInput,
-    #                             validators=[validators.MaxLengthValidator(0)])
-    def clean(self):
-        all_clean_data = super().clean()
-        email = all_clean_data['email']
-        vmail = all_clean_data['verifique_email']
-
-        if email != vmail:
-            raise forms.ValidationError("Asegurese que los emails son iguales")
+#
+# class FormName(forms.Form):
+#     name = forms.CharField(required=True)
+#     email = forms.EmailField(required=True)
+#     verifique_email = forms.EmailField(label='Ingrese su email nuevamente', required=True)
+#
+#     #text = forms.CharField(widget = forms.Textarea)
+#     # botcacther = forms.CharField(required=False,
+#     #                             widget=forms.HiddenInput,
+#     #                             validators=[validators.MaxLengthValidator(0)])
+#     def clean(self):
+#         all_clean_data = super().clean()
+#         email = all_clean_data['email']
+#         vmail = all_clean_data['verifique_email']
+#
+#         if email != vmail:
+#             raise forms.ValidationError("Asegurese que los emails son iguales")
 
 
 
