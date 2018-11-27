@@ -1,3 +1,7 @@
-#check_box{
+#check_box+label{
     background:url({%static "/img/s6.jpg" %}) no-repeat;
+  }
+
+#check_box:checked+label{
+    background:url({%static "/img/sn6.jpg" %}) no-repeat;
   }

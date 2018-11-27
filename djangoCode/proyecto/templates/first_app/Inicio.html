@@ -18,8 +18,22 @@
 <div class="container">
 
   <div class="row">
-    
-    <div  class="col"><a href="{% url 'first_app:reservacion' %}"><img class="d-block w-100" name = "este" value = "1"src="{%static "/img/m1.png" %}" alt=""></a></div>
+<script type="text/javascript">
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+</script>
+    <form class="" action="{% url 'first_app:selmesa' %}" method="post">
+      {% csrf_token %}
+      <div class="row">
+      <div  class="col"><a href="{% url 'first_app:reservacion' %}" onclick="setCookie('mesa',1,1);"><img class="d-block w-100" name = "mesa" value = "1"src="{%static "/img/m1.png" %}" alt=""></a></div>
+
+    </form>
+
+
 
     <div class="col"><a href="{% url 'first_app:reservacion' %}"><img class="d-block w-100" src="{%static "/img/m2.png" %}" alt=""></a></div>
     <div class="col"><a href="{% url 'first_app:reservacion' %}"><img class="d-block w-100" src="{%static "/img/m3.png" %}" alt=""></a></div>
@@ -49,9 +63,8 @@
   </div>
 </div>
 
-<span>Lugares Disponibles: </span>240
-
-
+<!--
+<span>Lugares Disponibles: {{asientos.asientos}}</span> -->
 
 {% endblock %}
 

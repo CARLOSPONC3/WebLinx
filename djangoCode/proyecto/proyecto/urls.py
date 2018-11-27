@@ -26,6 +26,10 @@ urlpatterns = [
     url(r'^first_app/',include('first_app.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^logout/$', views.user_logout,name='logout'),
-    url(r'^special/', views.special,name='special')
-    
+    url(r'^special/', views.special,name='special'),
+    url(r'^crearcuenta/$',views.crearcuenta,name='crearcuenta'),
+    url(r'^reservacion/$',views.reservacion,name='reservacion'),
+    url(r'^inicio/$',views.inicio,name='inicio'),
+    url(r'^user_login/$',views.user_login,name='user_login'),
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

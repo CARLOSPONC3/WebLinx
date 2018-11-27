@@ -3,8 +3,10 @@ from django.http import HttpResponseRedirect,HttpResponse
 from first_app.models import Usuario,Reserva,Reservaciones,Asientos,UserProfileInfo
 from first_app.forms import UserForm,UserProfileInfoForm,StatusForm
 from django.core.urlresolvers import reverse
+from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
+
 # from first_app.forms import NewUser
 # Create your views here.
 
@@ -32,20 +34,29 @@ def selmesa(request):
     asientos = Asientos.objects.filter(mesa=bar)
     return smesa
 
-
+def disponible(request):
+    asientos = Asientos.objects.all()
 
 def reservacion(request):
     #bar=selmesa(request)
-    asientos = Asientos.objects.all()#mesa=bar)
-    asien = [request.POST.get('este')]
+    mesa = request.COOKIES.get('mesa')
+    print(mesa)
+    asientos = Asientos.objects.filter(mesa=mesa)
+    print("hola ",asientos)
+    asien = request.POST.getlist('este')
     for i in asien:
         if request.method == "POST":
             estatus = Asientos.objects.get(asiento=i)
             if estatus.status == True:
                 estatus.status = False
+                reserva = Reservaciones(user = request.user,asientos = estatus)
+                reserva.save()
             else:
                 estatus.status = True
+                reserva = Reservaciones(user = request.user,asientos = estatus)
+                reserva.save()
             estatus.save()
+
 
     return render(request,"first_app/reservacion.html", {'asientos': asientos})
 

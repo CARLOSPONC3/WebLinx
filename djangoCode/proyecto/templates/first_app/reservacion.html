@@ -1,6 +1,7 @@
 {% extends "first_app/headfoot.html" %}
 {% load static %}
 {% block body_block %}
+
 <div class="container">
 <form enctype="multipart/form-data" action="{% url 'first_app:reservacion' %}"  method="post">
   {% csrf_token %}
@@ -8,10 +9,10 @@
     {% for asiento in asientos %}
       {% if asiento.status %}
       <img src="{%static "/img/s6.jpg" %}" alt="">
-      <div class="col" ><input class="d-block w-100" id= "check_box" value="{{asiento.asiento}}" name="este" type="checkbox"  ></div>
+      <div class="col" ><input class="d-block w-100" id= "check_box" value="{{asiento.asiento}}" name="este" type="checkbox" src="{%static "/img/s6.jpg" %}" ></div>
       {% else %}
       <img src="{%static "/img/sn6.jpg" %}" alt="">
-      <div class="col" ><input class="d-block w-100" value="{{asiento.asiento}}" name="este" type="checkbox"  ></div>
+      <div class="col" ><input class="d-block w-100" value="{{asiento.asiento}}" name="este" type="checkbox"  src="{%static "/img/s6.jpg" %}"></div>
       {% endif %}
       {% if asiento.asiento == '6' %}
       </div>
